@@ -1,0 +1,41 @@
+spring:
+  aop:
+    proxy-target-class: false
+  profiles:
+    active: chaos-monkey
+
+management:
+  endpoint:
+    chaosmonkey:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, chaosmonkey
+chaos:
+  monkey:
+    enabled: true
+    assaults:
+      exceptions-active: true
+      latency-active: true
+    watcher:
+      rest-controller: false
+      service: false
+      repository: false
+      component: false
+      controller: true
+           
+resilience4j:
+  circuitbreaker:
+    metrics:
+      enabled: true
+    configs: 
+      default:
+        ring-buffer-size-in-closed-state: 3
+        ring-buffer-size-in-half-open-state: 2
+        failure-rate-threshold: 50
+    instances:
+      database:
+        base-config: default
+        wait-duration-in-open-state: 10s
+                   

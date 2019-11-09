@@ -1,0 +1,4 @@
+database:
+  url: jdbc:oracle:thin:@[server]:[port]:[sid]
+  username: sample-username
+  password: sample-password
