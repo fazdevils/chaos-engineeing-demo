@@ -15,7 +15,7 @@
 		<mybatis-springboot.version>2.1.1</mybatis-springboot.version>
 		<ojdbc.version>19.3.0.0</ojdbc.version> <!-- TODO verify this is the correct version -->
 		<resilience4j-springboot.version>1.1.0</resilience4j-springboot.version>
-		<springfox-swagger.version>2.9.2</springfox-swagger.version>
+		<springfox-swagger.version>2.10.0</springfox-swagger.version>
 	</properties>
 
 	<parent>
